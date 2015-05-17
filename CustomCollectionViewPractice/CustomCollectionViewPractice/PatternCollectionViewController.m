@@ -7,8 +7,9 @@
 //
 
 #import "PatternCollectionViewController.h"
+#import "CollectionViewCell.h"
 
-@interface PatternCollectionViewController ()
+@interface PatternCollectionViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 @end
 
@@ -19,6 +20,9 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.collectionView.backgroundColor = [UIColor whiteColor];
+    [self.collectionView reloadData];
+    
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -28,41 +32,123 @@ static NSString * const reuseIdentifier = @"Cell";
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)willAnimateFirstHalfOfRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    
+    [super willAnimateFirstHalfOfRotationToInterfaceOrientation:toInterfaceOrientation duration:duration];
+    self.collectionView.frame = self.view.bounds;
+    
+    [self.collectionView reloadData];
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-#warning Incomplete method implementation -- Return the number of sections
-    return 0;
+
+    return 1;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-#warning Incomplete method implementation -- Return the number of items in the section
-    return 0;
+
+    return self.numberOfColumns * self.numberOfRows;
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    // Configure the cell
+    int screenWidth = self.view.frame.size.width;
+    
+    if (screenWidth % self.numberOfColumns != 0) {
+        
+        self.circleSize = (self.view.frame.size.width - (screenWidth % self.numberOfColumns)) / self.numberOfColumns;
+    }
+    
+    else {
+        
+        self.circleSize = self.view.frame.size.width / self.numberOfColumns;
+    }
+    
+    CGSize circleSize = CGSizeMake(self.circleSize, self.circleSize);
+    
+    return circleSize;;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+    
+    return 0.0;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+    
+    return 0.0;
+}
+
+-(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    
+    return UIEdgeInsetsMake(0, 0, 0, 0);
+}
+
+
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    
+    if ([indexPath row] % self.colorArray.count == 0) {
+        cell.circleView.backgroundColor = [self colorWithHexString:self.colorArray[0] alpha:1.0];
+    }
+    
+    else if ([indexPath row] % self.colorArray.count == 1) {
+        cell.circleView.backgroundColor = [self colorWithHexString:self.colorArray[1] alpha:1.0];
+    }
+    
+    else if ([indexPath row] % self.colorArray.count == 2) {
+        cell.circleView.backgroundColor = [self colorWithHexString:self.colorArray[2] alpha:1.0];
+    }
+    
+    else if ([indexPath row] % self.colorArray.count == 3) {
+        cell.circleView.backgroundColor = [self colorWithHexString:self.colorArray[3] alpha:1.0];
+    }
     
     return cell;
 }
+
+- (UIColor *)colorWithHexString:(NSString *)hexColorString alpha:(CGFloat)alpha {
+    
+    unsigned colorValue = 0;
+    
+    NSScanner *valueScanner = [NSScanner scannerWithString:hexColorString];
+    
+    if ([hexColorString rangeOfString:@"#"].location != NSNotFound) [valueScanner setScanLocation:1];
+    
+    [valueScanner scanHexInt:&colorValue];
+    
+    return [UIColor colorWithRed:((colorValue & 0xFF00000) >> 16)/255.0 green:((colorValue & 0xFF00) >> 8)/ 255.0 blue:((colorValue & 0xFF) >> 0)/ 255.0 alpha:alpha];
+    
+}
+
+//If screenshot mehthod ever added here is the code
+
+- (UIImage *)captureView:(UIView *)view {
+    
+    CGRect rect = [[UIScreen mainScreen]bounds];
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [view.layer renderInContext:context];
+    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return img;
+    
+}
+
+- (void)saveScreenShot:(UIView *)view {
+    
+    UIImageWriteToSavedPhotosAlbum([self captureView:self.view], nil, nil, nil);
+    
+}
+
 
 #pragma mark <UICollectionViewDelegate>
 
