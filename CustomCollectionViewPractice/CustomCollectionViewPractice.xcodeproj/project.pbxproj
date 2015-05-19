@@ -442,6 +442,7 @@
 				270E51ED1B0807EF001CDF3C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		270E51EE1B0807EF001CDF3C /* Build configuration list for PBXNativeTarget "CustomCollectionViewPracticeTests" */ = {
 			isa = XCConfigurationList;
@@ -450,6 +451,7 @@
 				270E51F01B0807EF001CDF3C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

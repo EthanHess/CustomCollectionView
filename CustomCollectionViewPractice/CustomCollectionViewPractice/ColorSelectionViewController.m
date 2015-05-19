@@ -49,8 +49,8 @@
     self.greenBool = NO;
     self.orangeBool = NO;
     
-    [self.rowsTextField setKeyboardType:UIKeyboardTypeNumberPad];
-    [self.columnsTextField setKeyboardType:UIKeyboardTypeNumberPad]; 
+//    [self.rowsTextField setKeyboardType:UIKeyboardTypeNumberPad];
+//    [self.columnsTextField setKeyboardType:UIKeyboardTypeNumberPad]; 
     
 }
 
@@ -112,7 +112,9 @@
 - (IBAction)generatePattern:(id)sender {
     
     [self performSegueWithIdentifier:@"GeneratePattern" sender:sender];
+    
 }
+
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -135,16 +137,21 @@
     }
     
     if (self.blueBool == YES) {
-        [patternView.colorArray addObject:@"0022FF"];
+        [patternView.colorArray addObject:@"#0022FF"];
     }
     
     if (self.greenBool == YES) {
-        [patternView.colorArray addObject:@"07CF00"];
+        [patternView.colorArray addObject:@"#07CF00"];
     }
     
     if (self.orangeBool == YES) {
-        [patternView.colorArray addObject:@"FF9100"]; 
+        [patternView.colorArray addObject:@"#FF9100"];
+        
     }
+    
+//    patternView = [self.storyboard instantiateViewControllerWithIdentifier:@"PatternCollection"];
+//    
+//    [self.navigationController pushViewController:patternView animated:YES];
 }
 
 

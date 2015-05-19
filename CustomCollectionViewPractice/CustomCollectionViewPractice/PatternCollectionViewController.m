@@ -93,6 +93,8 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
+    [collectionView registerClass:[CollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    
     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     if ([indexPath row] % self.colorArray.count == 0) {
