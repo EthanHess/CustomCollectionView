@@ -149,9 +149,7 @@
         
     }
     
-//    patternView = [self.storyboard instantiateViewControllerWithIdentifier:@"PatternCollection"];
-//    
-//    [self.navigationController pushViewController:patternView animated:YES];
+
 }
 
 
