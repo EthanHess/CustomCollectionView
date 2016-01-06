@@ -7,7 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+@import UIKit; 
 
 @interface NSObject (Colors)
+
++ (UIColor *)randomColorOne;
+
++ (UIColor *)randomColorTwo;
+
++ (UIColor *)randomColorThree;
+
++ (UIColor *)randomColorFour;
+
 
 @end

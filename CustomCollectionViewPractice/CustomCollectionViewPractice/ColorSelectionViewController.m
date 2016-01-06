@@ -133,19 +133,23 @@
     patternView.colorArray = [NSMutableArray new];
     
     if (self.redBool == YES) {
-        [patternView.colorArray addObject:@"#FF0000"];
+//        [patternView.colorArray addObject:@"#FF0000"];
+        [patternView.colorArray addObject:[UIColor randomColorOne]];
     }
     
     if (self.blueBool == YES) {
-        [patternView.colorArray addObject:@"#0022FF"];
+//        [patternView.colorArray addObject:@"#0022FF"];
+        [patternView.colorArray addObject:[UIColor randomColorTwo]];
     }
     
     if (self.greenBool == YES) {
-        [patternView.colorArray addObject:@"#07CF00"];
+//        [patternView.colorArray addObject:@"#07CF00"];
+        [patternView.colorArray addObject:[UIColor randomColorThree]];
     }
     
     if (self.orangeBool == YES) {
-        [patternView.colorArray addObject:@"#FF9100"];
+//        [patternView.colorArray addObject:@"#FF9100"];
+        [patternView.colorArray addObject:[UIColor randomColorFour]];
         
     }
     

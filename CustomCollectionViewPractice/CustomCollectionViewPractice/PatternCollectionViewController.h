@@ -14,5 +14,6 @@
 @property int numberOfColumns;
 @property (nonatomic, strong) NSMutableArray *colorArray;
 @property float circleSize;
+@property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *swipeRecognizer;
 
 @end

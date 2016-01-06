@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Snapshot.h"
+#import "SnapshotController.h"
 
-@interface ViewController : UIViewController
+@interface SavedPatternsViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end
 

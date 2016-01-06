@@ -8,6 +8,7 @@
 
 #import "PatternCollectionViewController.h"
 #import "CollectionViewCell.h"
+#import "SnapshotController.h"
 
 @interface PatternCollectionViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
@@ -27,9 +28,13 @@ static NSString * const reuseIdentifier = @"Cell";
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Register cell classes
+    
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
     // Do any additional setup after loading the view.
+    
+    self.swipeRecognizer = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(screenSwiped:)];
+    self.swipeRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
 }
 
 - (void)willAnimateFirstHalfOfRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
@@ -40,7 +45,10 @@ static NSString * const reuseIdentifier = @"Cell";
     [self.collectionView reloadData];
 }
 
-
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [self performSegueWithIdentifier:@"swipeSegue" sender:self];
+}
 
 #pragma mark <UICollectionViewDataSource>
 
@@ -98,19 +106,23 @@ static NSString * const reuseIdentifier = @"Cell";
     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     if ([indexPath row] % self.colorArray.count == 0) {
-        cell.circleView.backgroundColor = [self colorWithHexString:self.colorArray[0] alpha:1.0];
+//        cell.circleView.backgroundColor = [self colorWithHexString:self.colorArray[0] alpha:1.0];
+         cell.circleView.backgroundColor = self.colorArray[0];
     }
     
     else if ([indexPath row] % self.colorArray.count == 1) {
-        cell.circleView.backgroundColor = [self colorWithHexString:self.colorArray[1] alpha:1.0];
+//        cell.circleView.backgroundColor = [self colorWithHexString:self.colorArray[1] alpha:1.0];
+        cell.circleView.backgroundColor = self.colorArray[1];
     }
     
     else if ([indexPath row] % self.colorArray.count == 2) {
-        cell.circleView.backgroundColor = [self colorWithHexString:self.colorArray[2] alpha:1.0];
+//        cell.circleView.backgroundColor = [self colorWithHexString:self.colorArray[2] alpha:1.0];
+        cell.circleView.backgroundColor = self.colorArray[2];
     }
     
     else if ([indexPath row] % self.colorArray.count == 3) {
-        cell.circleView.backgroundColor = [self colorWithHexString:self.colorArray[3] alpha:1.0];
+//        cell.circleView.backgroundColor = [self colorWithHexString:self.colorArray[3] alpha:1.0];
+        cell.circleView.backgroundColor = self.colorArray[3];
     }
     
     return cell;
@@ -129,27 +141,60 @@ static NSString * const reuseIdentifier = @"Cell";
     return [UIColor colorWithRed:((colorValue & 0xFF00000) >> 16)/255.0 green:((colorValue & 0xFF00) >> 8)/ 255.0 blue:((colorValue & 0xFF) >> 0)/ 255.0 alpha:alpha];
     
 }
+- (IBAction)screenSwiped:(UISwipeGestureRecognizer *)sender {
+    
+//    sender = self.swipeRecognizer;
+    
+    if (sender.direction == UISwipeGestureRecognizerDirectionRight) {
+        
+        [self performSegueWithIdentifier:@"swipeSegue" sender:sender];
+    }
+    
+}
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    
+    [self performSegueWithIdentifier:@"swipeSegue" sender:self];
+}
 
 //If screenshot mehthod ever added here is the code
 
-- (UIImage *)captureView:(UIView *)view {
+//- (UIImage *)captureView:(UIView *)view {
+//    
+//    CGRect rect = [[UIScreen mainScreen]bounds];
+//    UIGraphicsBeginImageContext(rect.size);
+//    CGContextRef context = UIGraphicsGetCurrentContext();
+//    [view.layer renderInContext:context];
+//    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
+//    
+//    return img;
+//    
+//}
+
+- (IBAction)captureView:(id)sender {
     
-    CGRect rect = [[UIScreen mainScreen]bounds];
+    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
+    CGRect rect = [keyWindow bounds];
     UIGraphicsBeginImageContext(rect.size);
     CGContextRef context = UIGraphicsGetCurrentContext();
-    [view.layer renderInContext:context];
-    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+    [keyWindow.layer renderInContext:context];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
-    return img;
+    [[SnapshotController sharedInstance]addSnapshotWithImage:image];
     
+//    return image;
+
 }
 
-- (void)saveScreenShot:(UIView *)view {
-    
-    UIImageWriteToSavedPhotosAlbum([self captureView:self.view], nil, nil, nil);
-    
-}
+
+
+//- (void)saveScreenShot:(UIView *)view {
+//    
+//    UIImageWriteToSavedPhotosAlbum([self captureView:self.view], nil, nil, nil);
+//    
+//}
 
 
 #pragma mark <UICollectionViewDelegate>

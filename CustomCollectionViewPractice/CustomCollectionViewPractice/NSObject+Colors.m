@@ -10,4 +10,24 @@
 
 @implementation NSObject (Colors)
 
++ (UIColor *)randomColorOne {
+    
+    return [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1];
+}
+
++ (UIColor *)randomColorTwo {
+    
+    return [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1];
+}
+
++ (UIColor *)randomColorThree {
+    
+    return [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1];
+}
+
++ (UIColor *)randomColorFour {
+    
+    return [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1];
+}
+
 @end
