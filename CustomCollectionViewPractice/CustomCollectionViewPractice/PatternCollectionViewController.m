@@ -126,6 +126,16 @@ static NSString * const reuseIdentifier = @"Cell";
         cell.circleView.backgroundColor = self.colorArray[3];
     }
     
+    else if ([indexPath row] % self.colorArray.count == 4) {
+ 
+        cell.circleView.backgroundColor = self.colorArray[4];
+    }
+    
+    else if ([indexPath row] % self.colorArray.count == 5) {
+
+        cell.circleView.backgroundColor = self.colorArray[5];
+    }
+    
     return cell;
 }
 

@@ -15,15 +15,19 @@
 @property (weak, nonatomic) IBOutlet UITextField *rowsTextField;
 @property (weak, nonatomic) IBOutlet UITextField *columnsTextField;
 
-@property (weak, nonatomic) IBOutlet UIButton *redButton;
-@property (weak, nonatomic) IBOutlet UIButton *blueButton;
-@property (weak, nonatomic) IBOutlet UIButton *greenButton;
-@property (weak, nonatomic) IBOutlet UIButton *orangeButton;
+@property (weak, nonatomic) IBOutlet UIButton *oneButton;
+@property (weak, nonatomic) IBOutlet UIButton *twoButton;
+@property (weak, nonatomic) IBOutlet UIButton *threeButton;
+@property (weak, nonatomic) IBOutlet UIButton *fourButton;
+@property (weak, nonatomic) IBOutlet UIButton *fiveButton;
+@property (weak, nonatomic) IBOutlet UIButton *sixButton;
 
-@property (nonatomic) BOOL redBool;
-@property (nonatomic) BOOL blueBool;
-@property (nonatomic) BOOL greenBool;
-@property (nonatomic) BOOL orangeBool;
+@property (nonatomic) BOOL oneBool;
+@property (nonatomic) BOOL twoBool;
+@property (nonatomic) BOOL threeBool;
+@property (nonatomic) BOOL fourBool;
+@property (nonatomic) BOOL fiveBool;
+@property (nonatomic) BOOL sixBool;
 
 @end
 
@@ -32,22 +36,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    float cornerRadius = self.redButton.frame.size.height / 2;
+    float cornerRadius = self.oneButton.frame.size.height / 2;
     
-    self.redButton.layer.cornerRadius = cornerRadius;
-    self.blueButton.layer.cornerRadius = cornerRadius;
-    self.greenButton.layer.cornerRadius = cornerRadius;
-    self.orangeButton.layer.cornerRadius = cornerRadius; 
+    self.oneButton.layer.cornerRadius = cornerRadius;
+    self.twoButton.layer.cornerRadius = cornerRadius;
+    self.threeButton.layer.cornerRadius = cornerRadius;
+    self.fourButton.layer.cornerRadius = cornerRadius;
+    self.fiveButton.layer.cornerRadius = cornerRadius;
+    self.sixButton.layer.cornerRadius = cornerRadius;
     
-    self.redButton.backgroundColor = [UIColor lightGrayColor];
-    self.blueButton.backgroundColor = [UIColor lightGrayColor];
-    self.greenButton.backgroundColor = [UIColor lightGrayColor];
-    self.orangeButton.backgroundColor = [UIColor lightGrayColor];
+    self.oneButton.backgroundColor = [UIColor lightGrayColor];
+    self.twoButton.backgroundColor = [UIColor lightGrayColor];
+    self.threeButton.backgroundColor = [UIColor lightGrayColor];
+    self.fourButton.backgroundColor = [UIColor lightGrayColor];
+    self.fiveButton.backgroundColor = [UIColor lightGrayColor];
+    self.sixButton.backgroundColor = [UIColor lightGrayColor];
     
-    self.redBool = NO;
-    self.blueBool = NO;
-    self.greenBool = NO;
-    self.orangeBool = NO;
+    self.oneBool = NO;
+    self.twoBool = NO;
+    self.threeBool = NO;
+    self.fourBool = NO;
+    self.fiveBool = NO;
+    self.sixBool = NO;
     
 //    [self.rowsTextField setKeyboardType:UIKeyboardTypeNumberPad];
 //    [self.columnsTextField setKeyboardType:UIKeyboardTypeNumberPad]; 
@@ -59,52 +69,78 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)redButtonTapped:(id)sender {
+- (IBAction)oneButtonTapped:(id)sender {
     
-    if (self.redBool == NO) {
-        [self.redButton setBackgroundColor:[UIColor redColor]];
-        self.redBool = YES;
+    if (self.oneBool == NO) {
+        [self.oneButton setBackgroundColor:[UIColor redColor]];
+        self.oneBool = YES;
     }
     else {
-        [self.redButton setBackgroundColor:[UIColor lightGrayColor]];
-        self.redBool = NO;
+        [self.oneButton setBackgroundColor:[UIColor lightGrayColor]];
+        self.oneBool = NO;
     }
     
 }
 
-- (IBAction)blueButtonTapped:(id)sender {
+- (IBAction)twoButtonTapped:(id)sender {
     
-    if (self.blueBool == NO) {
-        [self.blueButton setBackgroundColor:[UIColor blueColor]];
-        self.blueBool = YES;
+    if (self.twoBool == NO) {
+        [self.twoButton setBackgroundColor:[UIColor blueColor]];
+        self.twoBool = YES;
     }
     else {
-        [self.blueButton setBackgroundColor:[UIColor lightGrayColor]];
-        self.blueBool = NO;
+        [self.twoButton setBackgroundColor:[UIColor lightGrayColor]];
+        self.twoBool = NO;
     }
 }
 
-- (IBAction)greenButtonTapped:(id)sender {
+- (IBAction)threeButtonTapped:(id)sender {
     
-    if (self.greenBool == NO) {
-        [self.greenButton setBackgroundColor:[UIColor greenColor]];
-        self.greenBool = YES;
+    if (self.threeBool == NO) {
+        [self.threeButton setBackgroundColor:[UIColor greenColor]];
+        self.threeBool = YES;
     }
     else {
-        [self.greenButton setBackgroundColor:[UIColor lightGrayColor]];
-        self.greenBool = NO;
+        [self.threeButton setBackgroundColor:[UIColor lightGrayColor]];
+        self.threeBool = NO;
     }
 }
 
-- (IBAction)orangeButtonTapped:(id)sender {
+- (IBAction)fourButtonTapped:(id)sender {
     
-    if (self.orangeBool == NO) {
-        [self.orangeButton setBackgroundColor:[UIColor orangeColor]];
-        self.orangeBool = YES;
+    if (self.fourBool == NO) {
+        [self.fourButton setBackgroundColor:[UIColor orangeColor]];
+        self.fourBool = YES;
     }
     else {
-        [self.orangeButton setBackgroundColor:[UIColor lightGrayColor]];
-        self.orangeBool = NO;
+        [self.fourButton setBackgroundColor:[UIColor lightGrayColor]];
+        self.fourBool = NO;
+    }
+    
+}
+
+- (IBAction)fiveButtonTapped:(id)sender {
+    
+    if (self.fiveBool == NO) {
+        [self.fiveButton setBackgroundColor:[UIColor purpleColor]];
+        self.fiveBool = YES;
+    }
+    else {
+        [self.fiveButton setBackgroundColor:[UIColor lightGrayColor]];
+        self.fiveBool = NO;
+    }
+    
+}
+
+- (IBAction)sixButtonTapped:(id)sender {
+    
+    if (self.sixBool == NO) {
+        [self.sixButton setBackgroundColor:[UIColor yellowColor]];
+        self.sixBool = YES;
+    }
+    else {
+        [self.sixButton setBackgroundColor:[UIColor lightGrayColor]];
+        self.sixBool = NO;
     }
     
 }
@@ -119,7 +155,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    if (self.redBool == NO && self.blueBool == NO && self.greenBool == NO && self.orangeBool == NO) {
+    if (self.oneBool == NO && self.twoBool == NO && self.threeBool == NO && self.fourBool == NO && self.fiveBool == NO && self.sixBool == NO) {
         
         return;
         
@@ -132,25 +168,33 @@
     
     patternView.colorArray = [NSMutableArray new];
     
-    if (self.redBool == YES) {
+    if (self.oneBool == YES) {
 //        [patternView.colorArray addObject:@"#FF0000"];
         [patternView.colorArray addObject:[UIColor randomColorOne]];
     }
     
-    if (self.blueBool == YES) {
+    if (self.twoBool == YES) {
 //        [patternView.colorArray addObject:@"#0022FF"];
         [patternView.colorArray addObject:[UIColor randomColorTwo]];
     }
     
-    if (self.greenBool == YES) {
+    if (self.threeBool == YES) {
 //        [patternView.colorArray addObject:@"#07CF00"];
         [patternView.colorArray addObject:[UIColor randomColorThree]];
     }
     
-    if (self.orangeBool == YES) {
+    if (self.fourBool == YES) {
 //        [patternView.colorArray addObject:@"#FF9100"];
         [patternView.colorArray addObject:[UIColor randomColorFour]];
         
+    }
+    
+    if (self.fiveBool == YES) {
+        [patternView.colorArray addObject:[UIColor randomColorFive]];
+    }
+    
+    if (self.sixBool == YES) {
+        [patternView.colorArray addObject:[UIColor randomColorSix]]; 
     }
     
 

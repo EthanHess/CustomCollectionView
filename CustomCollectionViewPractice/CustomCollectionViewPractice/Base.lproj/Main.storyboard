@@ -71,7 +71,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="redButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Gw-z8-4wv"/>
+                                            <action selector="oneButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y9P-E2-044"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5HW-zK-22u">
@@ -86,7 +86,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="blueButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8hj-ed-LiQ"/>
+                                            <action selector="twoButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="izR-zk-Q3H"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hjB-kf-Aag">
@@ -101,7 +101,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="greenButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UNm-0K-gdC"/>
+                                            <action selector="threeButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bpz-it-NTY"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -119,7 +119,7 @@
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="orangeButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QQs-Gu-x2S"/>
+                                            <action selector="fourButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Tb-ue-R3Q"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kos-Dw-HtA">
@@ -131,6 +131,9 @@
                                         <state key="normal" title="Color 5">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="fiveButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ODg-Wc-la4"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GIc-HA-a0a">
                                         <rect key="frame" x="374" y="0.0" width="187" height="80"/>
@@ -141,6 +144,9 @@
                                         <state key="normal" title="Color 6">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="sixButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bZO-xQ-9T0"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -184,12 +190,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="blueButton" destination="5HW-zK-22u" id="vf2-ok-xuA"/>
                         <outlet property="columnsTextField" destination="Vc8-ih-eRe" id="oWP-sN-tgv"/>
-                        <outlet property="greenButton" destination="hjB-kf-Aag" id="5YL-wv-Zcc"/>
-                        <outlet property="orangeButton" destination="rQn-12-t0J" id="6AD-1w-EbO"/>
-                        <outlet property="redButton" destination="kLa-2p-MpI" id="oX2-xL-lZQ"/>
+                        <outlet property="fiveButton" destination="Kos-Dw-HtA" id="FIY-Jo-Um1"/>
+                        <outlet property="fourButton" destination="rQn-12-t0J" id="f8m-UI-hOR"/>
+                        <outlet property="oneButton" destination="kLa-2p-MpI" id="cpQ-hm-0SK"/>
                         <outlet property="rowsTextField" destination="qEN-RV-7R6" id="4nW-gP-bfl"/>
+                        <outlet property="sixButton" destination="GIc-HA-a0a" id="1bQ-CS-XWN"/>
+                        <outlet property="threeButton" destination="hjB-kf-Aag" id="60l-bf-jHY"/>
+                        <outlet property="twoButton" destination="5HW-zK-22u" id="RBa-le-NKu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
