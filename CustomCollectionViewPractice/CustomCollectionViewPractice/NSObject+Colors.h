@@ -19,5 +19,6 @@
 
 + (UIColor *)randomColorFour;
 
++ (UIColor *)randomBackgroundColor;
 
 @end

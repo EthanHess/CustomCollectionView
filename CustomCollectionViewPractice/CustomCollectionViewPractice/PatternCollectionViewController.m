@@ -9,6 +9,7 @@
 #import "PatternCollectionViewController.h"
 #import "CollectionViewCell.h"
 #import "SnapshotController.h"
+#import "NSObject+Colors.h"
 
 @interface PatternCollectionViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
@@ -21,7 +22,7 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.collectionView.backgroundColor = [UIColor whiteColor];
+    self.collectionView.backgroundColor = [UIColor randomBackgroundColor];
     [self.collectionView reloadData];
     
     // Uncomment the following line to preserve selection between presentations
