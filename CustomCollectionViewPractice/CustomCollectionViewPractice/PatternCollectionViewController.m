@@ -185,6 +185,15 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (IBAction)captureView:(id)sender {
     
+    self.navigationController.navigationBarHidden = YES;
+    
+    [self performSelector:@selector(snapShot) withObject:nil afterDelay:1];
+    
+
+}
+
+- (void)snapShot {
+    
     UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
     CGRect rect = [keyWindow bounds];
     UIGraphicsBeginImageContext(rect.size);
@@ -195,11 +204,11 @@ static NSString * const reuseIdentifier = @"Cell";
     
     [[SnapshotController sharedInstance]addSnapshotWithImage:image];
     
-//    return image;
-
+    //    return image;
+    
+    self.navigationController.navigationBarHidden = NO;
+    
 }
-
-
 
 //- (void)saveScreenShot:(UIView *)view {
 //    

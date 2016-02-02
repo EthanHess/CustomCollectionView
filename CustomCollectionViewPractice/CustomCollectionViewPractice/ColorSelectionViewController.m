@@ -59,8 +59,9 @@
     self.fiveBool = NO;
     self.sixBool = NO;
     
-//    [self.rowsTextField setKeyboardType:UIKeyboardTypeNumberPad];
-//    [self.columnsTextField setKeyboardType:UIKeyboardTypeNumberPad]; 
+    //FIX
+    [self.rowsTextField setKeyboardType:UIKeyboardTypeNumberPad];
+    [self.columnsTextField setKeyboardType:UIKeyboardTypeNumberPad]; 
     
 }
 
@@ -72,11 +73,14 @@
 - (IBAction)oneButtonTapped:(id)sender {
     
     if (self.oneBool == NO) {
-        [self.oneButton setBackgroundColor:[UIColor redColor]];
+//        [self.oneButton setBackgroundColor:[UIColor redColor]];
+        [self.oneButton setBackgroundColor:[UIColor randomButtonColorOne]];
+        [self.oneButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         self.oneBool = YES;
     }
     else {
         [self.oneButton setBackgroundColor:[UIColor lightGrayColor]];
+        [self.oneButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         self.oneBool = NO;
     }
     
@@ -85,11 +89,14 @@
 - (IBAction)twoButtonTapped:(id)sender {
     
     if (self.twoBool == NO) {
-        [self.twoButton setBackgroundColor:[UIColor blueColor]];
+//        [self.twoButton setBackgroundColor:[UIColor blueColor]];
+        [self.twoButton setBackgroundColor:[UIColor randomButtonColorTwo]];
+        [self.twoButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         self.twoBool = YES;
     }
     else {
         [self.twoButton setBackgroundColor:[UIColor lightGrayColor]];
+        [self.twoButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         self.twoBool = NO;
     }
 }
@@ -97,11 +104,14 @@
 - (IBAction)threeButtonTapped:(id)sender {
     
     if (self.threeBool == NO) {
-        [self.threeButton setBackgroundColor:[UIColor greenColor]];
+//        [self.threeButton setBackgroundColor:[UIColor greenColor]];
+        [self.threeButton setBackgroundColor:[UIColor randomButtonColorThree]];
+        [self.threeButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         self.threeBool = YES;
     }
     else {
         [self.threeButton setBackgroundColor:[UIColor lightGrayColor]];
+        [self.threeButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         self.threeBool = NO;
     }
 }
@@ -109,11 +119,14 @@
 - (IBAction)fourButtonTapped:(id)sender {
     
     if (self.fourBool == NO) {
-        [self.fourButton setBackgroundColor:[UIColor orangeColor]];
+//        [self.fourButton setBackgroundColor:[UIColor orangeColor]];
+        [self.fourButton setBackgroundColor:[UIColor randomButtonColorFour]];
+        [self.fourButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         self.fourBool = YES;
     }
     else {
         [self.fourButton setBackgroundColor:[UIColor lightGrayColor]];
+        [self.fourButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         self.fourBool = NO;
     }
     
@@ -122,11 +135,14 @@
 - (IBAction)fiveButtonTapped:(id)sender {
     
     if (self.fiveBool == NO) {
-        [self.fiveButton setBackgroundColor:[UIColor purpleColor]];
+//        [self.fiveButton setBackgroundColor:[UIColor purpleColor]];
+        [self.fiveButton setBackgroundColor:[UIColor randomButtonColorFive]];
+        [self.fiveButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         self.fiveBool = YES;
     }
     else {
         [self.fiveButton setBackgroundColor:[UIColor lightGrayColor]];
+        [self.fiveButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         self.fiveBool = NO;
     }
     
@@ -135,11 +151,14 @@
 - (IBAction)sixButtonTapped:(id)sender {
     
     if (self.sixBool == NO) {
-        [self.sixButton setBackgroundColor:[UIColor yellowColor]];
+//        [self.sixButton setBackgroundColor:[UIColor yellowColor]];
+        [self.sixButton setBackgroundColor:[UIColor randomButtonColorSix]];
+        [self.sixButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         self.sixBool = YES;
     }
     else {
         [self.sixButton setBackgroundColor:[UIColor lightGrayColor]];
+        [self.sixButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         self.sixBool = NO;
     }
     

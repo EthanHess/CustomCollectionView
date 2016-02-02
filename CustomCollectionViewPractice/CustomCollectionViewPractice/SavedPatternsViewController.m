@@ -54,15 +54,21 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
+    Snapshot *snapshot = [[SnapshotController sharedInstance].snapshots objectAtIndex:indexPath.item];
+    
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Options" message:nil preferredStyle:UIAlertControllerStyleAlert];
     
     [alertController addAction:[UIAlertAction actionWithTitle:@"Delete" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        
-        Snapshot *snapshot = [[SnapshotController sharedInstance].snapshots objectAtIndex:indexPath.item];
-        
+    
         [[SnapshotController sharedInstance]removeSnapshot:snapshot];
         
         [self.collectionView reloadData];
+        
+    }]];
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Save to photo album" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        [self saveToPhotoAlbum:snapshot];
         
     }]];
     
@@ -73,6 +79,19 @@
     [self presentViewController:alertController animated:YES completion:nil];
     
     
+}
+
+- (void)saveToPhotoAlbum:(Snapshot *)snapshot {
+    
+    NSData *data = snapshot.image;
+    UIImage *image = [UIImage imageWithData:data];
+    
+    UIImageWriteToSavedPhotosAlbum(image, self, @selector(saved), nil);
+}
+
+- (void)saved {
+    
+    NSLog(@"Saved!"); 
 }
 
 - (void)didReceiveMemoryWarning {

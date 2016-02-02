@@ -25,4 +25,17 @@
 
 + (UIColor *)randomBackgroundColor;
 
+
++ (UIColor *)randomButtonColorOne;
+
++ (UIColor *)randomButtonColorTwo;
+
++ (UIColor *)randomButtonColorThree;
+
++ (UIColor *)randomButtonColorFour;
+
++ (UIColor *)randomButtonColorFive;
+
++ (UIColor *)randomButtonColorSix; 
+
 @end

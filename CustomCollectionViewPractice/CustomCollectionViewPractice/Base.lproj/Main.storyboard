@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -33,6 +34,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="Ua4-uv-ICR">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                            </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qEN-RV-7R6">
                                 <rect key="frame" x="252" y="115" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -65,6 +69,7 @@
                                             <constraint firstAttribute="width" constant="80" id="9qW-ym-bSX"/>
                                             <constraint firstAttribute="height" constant="80" id="ChJ-Mm-hvT"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" name="Optima-BoldItalic" family="Optima" pointSize="15"/>
                                         <state key="normal" title="Color 1">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -79,6 +84,7 @@
                                             <constraint firstAttribute="height" constant="80" id="Vej-WQ-P2k"/>
                                             <constraint firstAttribute="width" constant="80" id="WI8-Pe-aMX"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" name="Optima-BoldItalic" family="Optima" pointSize="15"/>
                                         <state key="normal" title="Color 2">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -93,6 +99,7 @@
                                             <constraint firstAttribute="height" constant="80" id="CfA-FL-52b"/>
                                             <constraint firstAttribute="width" constant="80" id="RmK-RI-0d1"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" name="Optima-BoldItalic" family="Optima" pointSize="15"/>
                                         <state key="normal" title="Color 3">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -112,6 +119,7 @@
                                             <constraint firstAttribute="width" constant="80" id="HFL-vA-Nt6"/>
                                             <constraint firstAttribute="height" constant="80" id="Js2-M3-Ggp"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" name="Optima-BoldItalic" family="Optima" pointSize="15"/>
                                         <state key="normal" title="Color 4">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -125,6 +133,7 @@
                                             <constraint firstAttribute="width" constant="80" id="91f-mb-qCC"/>
                                             <constraint firstAttribute="height" constant="80" id="wsl-Rf-OEv"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" name="Optima-BoldItalic" family="Optima" pointSize="15"/>
                                         <state key="normal" title="Color 5">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -138,6 +147,7 @@
                                             <constraint firstAttribute="width" constant="80" id="YFU-sv-NC0"/>
                                             <constraint firstAttribute="height" constant="80" id="xQG-Re-vMe"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" name="Optima-BoldItalic" family="Optima" pointSize="15"/>
                                         <state key="normal" title="Color 6">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
@@ -162,9 +172,13 @@
                             <constraint firstItem="Vc8-ih-eRe" firstAttribute="leading" secondItem="qEN-RV-7R6" secondAttribute="leading" id="3Oe-e1-yAO"/>
                             <constraint firstItem="Vc8-ih-eRe" firstAttribute="centerX" secondItem="5oQ-u9-ZUw" secondAttribute="centerX" id="Ccv-L5-pIR"/>
                             <constraint firstItem="DFh-uM-ub6" firstAttribute="centerX" secondItem="qEN-RV-7R6" secondAttribute="centerX" id="EDJ-vv-xzW"/>
+                            <constraint firstAttribute="trailing" secondItem="Ua4-uv-ICR" secondAttribute="trailing" id="FP4-cq-hwB"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ua4-uv-ICR" secondAttribute="bottom" id="IHn-aP-jgn"/>
+                            <constraint firstItem="Ua4-uv-ICR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="NSW-Gn-mQF"/>
                             <constraint firstItem="fNT-t4-920" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Qfg-bj-toY"/>
                             <constraint firstItem="Vc8-ih-eRe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="d0P-bq-8g1"/>
                             <constraint firstItem="DFh-uM-ub6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="fNm-MU-rH4"/>
+                            <constraint firstItem="Ua4-uv-ICR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="luo-NE-sJt"/>
                             <constraint firstItem="qEN-RV-7R6" firstAttribute="top" secondItem="DFh-uM-ub6" secondAttribute="bottom" constant="22" id="nd5-Uk-4hM"/>
                             <constraint firstItem="Vc8-ih-eRe" firstAttribute="top" secondItem="5oQ-u9-ZUw" secondAttribute="bottom" constant="18" id="qYY-uY-h8i"/>
                             <constraint firstItem="Vc8-ih-eRe" firstAttribute="trailing" secondItem="qEN-RV-7R6" secondAttribute="trailing" id="zHU-Iq-hm6"/>
@@ -228,11 +242,18 @@
                     </collectionView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Title" id="k3Q-ER-BFq">
-                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="wia-FE-E7I">
-                            <connections>
-                                <action selector="captureView:" destination="Awi-cY-b5s" id="1yo-Td-k2d"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="camera" id="wia-FE-E7I">
+                                <connections>
+                                    <action selector="captureView:" destination="Awi-cY-b5s" id="1yo-Td-k2d"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="See entries" id="fLz-4m-9Sw">
+                                <connections>
+                                    <segue destination="kfx-SB-Dfx" kind="show" id="59X-NR-p1b"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -303,4 +324,10 @@
             <point key="canvasLocation" x="1522" y="222"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Background" width="375" height="675"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="j76-2i-XVl"/>
+    </inferredMetricsTieBreakers>
 </document>

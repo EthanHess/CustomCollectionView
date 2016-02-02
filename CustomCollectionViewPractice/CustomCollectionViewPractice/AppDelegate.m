@@ -16,8 +16,29 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    [self setUpAppearance];
+    
     return YES;
+}
+
+- (void)setUpAppearance {
+    
+    UIColor *tealColor = [self navBarColor:79 G:183 B:193];
+    
+    self.window.tintColor = tealColor;
+    
+    [UINavigationBar appearance].barTintColor = tealColor;
+    
+    [UINavigationBar appearance].tintColor = [UIColor whiteColor];
+    
+    [UINavigationBar appearance].titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
+    
+}
+
+- (UIColor *)navBarColor:(CGFloat)R G:(CGFloat)G B:(CGFloat)B {
+    
+    return [UIColor colorWithRed:(R)/255 green:(G)/255 blue:(B)/255 alpha:1];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

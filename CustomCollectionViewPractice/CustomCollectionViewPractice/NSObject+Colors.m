@@ -45,4 +45,39 @@
     return [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1];
 }
 
+//Button colors
+
++ (UIColor *)randomButtonColorOne {
+    
+    return [UIColor colorWithRed:arc4random_uniform(10)/255.0 green:arc4random_uniform(100)/255.0 blue:arc4random_uniform(180)/255.0 alpha:1];
+}
+
++ (UIColor *)randomButtonColorTwo {
+    
+    return [UIColor colorWithRed:arc4random_uniform(70)/255.0 green:arc4random_uniform(60)/255.0 blue:arc4random_uniform(200)/255.0 alpha:1];
+}
+
++ (UIColor *)randomButtonColorThree {
+    
+    return [UIColor colorWithRed:arc4random_uniform(200)/255.0 green:arc4random_uniform(150)/255.0 blue:arc4random_uniform(40)/255.0 alpha:1];
+}
+
++ (UIColor *)randomButtonColorFour {
+    
+    return [UIColor colorWithRed:arc4random_uniform(40)/255.0 green:arc4random_uniform(95)/255.0 blue:arc4random_uniform(155)/255.0 alpha:1];
+}
+
++ (UIColor *)randomButtonColorFive {
+    
+    return [UIColor colorWithRed:arc4random_uniform(60)/255.0 green:arc4random_uniform(50)/255.0 blue:arc4random_uniform(190)/255.0 alpha:1];
+}
+
++ (UIColor *)randomButtonColorSix {
+    
+    return [UIColor colorWithRed:arc4random_uniform(20)/255.0 green:arc4random_uniform(200)/255.0 blue:arc4random_uniform(80)/255.0 alpha:1];
+}
+
+
+
+
 @end
