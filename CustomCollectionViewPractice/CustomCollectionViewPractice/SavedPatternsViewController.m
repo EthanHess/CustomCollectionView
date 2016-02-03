@@ -86,12 +86,18 @@
     NSData *data = snapshot.image;
     UIImage *image = [UIImage imageWithData:data];
     
-    UIImageWriteToSavedPhotosAlbum(image, self, @selector(saved), nil);
+    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
 }
 
-- (void)saved {
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
     
-    NSLog(@"Saved!"); 
+    if (error) {
+        NSLog(@"%@", error.localizedDescription);
+    }
+    
+    else {
+    NSLog(@"Saved!");
+    }
 }
 
 - (void)didReceiveMemoryWarning {
